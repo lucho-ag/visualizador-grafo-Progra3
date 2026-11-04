@@ -1,0 +1,59 @@
+# Mapa ampliado de UADE: 20 estaciones, 4 obligatorias, 1 zona prohibida, 3 ventanas de tiempo
+# LUGAR;nombre;aula(0 si no);x;y;obligatorio;prohibido
+LUGAR;Aula 348;348;0;0;0;0
+LUGAR;Pasillo P3;0;30;0;0;0
+LUGAR;Escalera;0;60;0;0;0
+LUGAR;Biblioteca;0;30;40;0;0
+LUGAR;Aula 401;401;30;-40;0;0
+LUGAR;Aula 402;402;0;-40;0;0
+LUGAR;Aula 612;612;60;-40;0;0
+LUGAR;Aula 613;613;90;-40;1;0
+LUGAR;Molinete Lima 3;0;100;0;1;0
+LUGAR;Patio;0;60;40;0;0
+LUGAR;Starbucks;0;90;40;1;0
+LUGAR;Buffet;0;120;40;0;0
+LUGAR;Aula 501;501;0;40;0;0
+LUGAR;Laboratorio;0;120;0;0;0
+LUGAR;Aula 705;705;120;-40;0;0
+LUGAR;Zona obras;0;45;20;0;1
+LUGAR;Secretaria;0;0;80;0;0
+LUGAR;Aula 210;210;30;80;0;0
+LUGAR;Auditorio;0;60;80;1;0
+LUGAR;Aula 118;118;90;80;0;0
+# ARISTA;a;b;segundos;modos (C=caminando, S=saltando, P=patas para arriba)
+ARISTA;Aula 348;Pasillo P3;40;CSP
+ARISTA;Aula 348;Aula 501;55;CS
+ARISTA;Aula 348;Aula 402;55;CP
+ARISTA;Pasillo P3;Escalera;40;CSP
+ARISTA;Pasillo P3;Biblioteca;55;CP
+ARISTA;Pasillo P3;Aula 401;55;CS
+ARISTA;Pasillo P3;Zona obras;30;CSP
+ARISTA;Escalera;Patio;55;CS
+ARISTA;Escalera;Aula 612;55;CSP
+ARISTA;Escalera;Molinete Lima 3;55;CP
+ARISTA;Escalera;Zona obras;25;CS
+ARISTA;Biblioteca;Patio;40;CS
+ARISTA;Biblioteca;Aula 501;40;CSP
+ARISTA;Biblioteca;Aula 210;55;CS
+ARISTA;Aula 501;Secretaria;55;CP
+ARISTA;Secretaria;Aula 210;40;CSP
+ARISTA;Aula 210;Auditorio;40;CS
+ARISTA;Auditorio;Patio;55;CSP
+ARISTA;Auditorio;Aula 118;40;CS
+ARISTA;Aula 118;Starbucks;55;CSP
+ARISTA;Patio;Starbucks;40;CSP
+ARISTA;Starbucks;Molinete Lima 3;60;CS
+ARISTA;Starbucks;Buffet;40;CS
+ARISTA;Buffet;Laboratorio;55;CSP
+ARISTA;Molinete Lima 3;Laboratorio;30;CSP
+ARISTA;Molinete Lima 3;Aula 613;50;CSP
+ARISTA;Aula 612;Aula 613;40;CS
+ARISTA;Aula 612;Aula 401;70;CP
+ARISTA;Aula 401;Aula 402;40;CS
+ARISTA;Laboratorio;Aula 705;55;CS
+ARISTA;Aula 705;Aula 613;40;CSP
+# VENTANA;lugar;desde;hasta (cerrado en [desde,hasta], en segundos)
+VENTANA;Starbucks;100;130
+VENTANA;Patio;150;180
+VENTANA;Molinete Lima 3;200;240
+INICIO;Aula 348

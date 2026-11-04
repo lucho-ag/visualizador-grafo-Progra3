@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Misión UADA · Visualizador</title>
+  <meta name="description" content="Visualizador interactivo de los grafos del TPO Misión UADA (Programación III, UADE)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo">◆</span>
+      <div>
+        <h1>Misión UADA</h1>
+        <p>Visualizador de grafos · Programación III</p>
+      </div>
+    </div>
+    <div class="map-switch" role="tablist" aria-label="Grafo">
+      <button data-map="no_dirigido" class="on">No dirigido</button>
+      <button data-map="dirigido">Dirigido (oficial)</button>
+      <label class="upload" title="Cargar otro mapa .txt con el mismo formato">
+        Cargar .txt<input type="file" id="file" accept=".txt" hidden />
+      </label>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="stage">
+      <div class="toolbar">
+        <div class="seg" id="tabs">
+          <button data-tab="explorar" class="on">Explorar</button>
+          <button data-tab="ruta">Armar ruta</button>
+          <button data-tab="bb">Branch &amp; Bound</button>
+        </div>
+        <div class="toggles">
+          <label><input type="checkbox" id="optPesos" checked /> Tiempos</label>
+          <label><input type="checkbox" id="optCoords" /> Coordenadas</label>
+          <span class="modefilter" id="modeFilter" title="Mostrar solo aristas que permiten el modo">
+            <button data-m="C" class="on">C</button><button data-m="S" class="on">S</button><button data-m="P" class="on">P</button>
+          </span>
+        </div>
+      </div>
+      <div class="canvas-wrap">
+        <svg id="graph" role="img" aria-label="Grafo del mapa de UADE"></svg>
+        <div class="legend">
+          <span><i class="dot oblig"></i>Obligatorio</span>
+          <span><i class="dot aula"></i>Aula (recarga)</span>
+          <span><i class="dot ventana"></i>Ventana horaria</span>
+          <span><i class="dot prohib"></i>Prohibido</span>
+          <span><i class="dot inicio"></i>Inicio / fin</span>
+        </div>
+        <div class="hud" id="hud" hidden></div>
+      </div>
+      <div class="stats" id="stats"></div>
+    </section>
+
+    <aside class="panel" id="panel"></aside>
+  </main>
+
+  <footer class="foot">TPO Misión UADA · UADE 2026 · reglas: batería 100, C t·t/60 · S t/2·2,2t/60 · P 2t·0,45t/60</footer>
+
+  <script src="js/maps.js"></script>
+  <script src="js/model.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
